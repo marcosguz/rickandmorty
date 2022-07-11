@@ -8,6 +8,7 @@ import '../css/banner.css'
 const Location = () => {
 
     const [ location, setLocation ] = useState({})
+    const [ searchValue, setSearchValue ] = useState('')
         
     useEffect( () => {
         const locationRandom = Math.floor(Math.random() * 126) + 1
@@ -15,7 +16,7 @@ const Location = () => {
             .then(response => setLocation(response.data))
     }, [])
 
-    const [ searchValue, setSearchValue ] = useState('')
+    console.log(location)
 
     const searchType = () => {
         axios.get(`https://rickandmortyapi.com/api/location/${searchValue}`)
@@ -30,12 +31,12 @@ const Location = () => {
                 <div className='title'></div>
                 <div className='search'>
                     <input type="text" value={searchValue} onChange={event => setSearchValue(event.target.value)} placeholder='type a location id'/>
-                    <button onClick={searchType}>Search</button>
+                    <button className='button' onClick={searchType}>Search</button>
                 </div>
             </div>
 
             <div>
-                <h1>{location.name}</h1>
+                <h1 className='name'>{location.name}</h1>
             </div>
 
             <div>
@@ -49,6 +50,7 @@ const Location = () => {
                     ))}
                 </ul>
             </div>
+            
         </div>
     );
 };
