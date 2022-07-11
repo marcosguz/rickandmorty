@@ -1,0 +1,20 @@
+.containter {
+    /* background-color: #05292e; */
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+.item-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 890px;
+    margin: 0 auto;
+}
+
+.location {
+    display: flex;
+    width: 890px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
